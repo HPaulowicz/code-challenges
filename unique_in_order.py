@@ -9,7 +9,8 @@ def unique_in_order(iterable):
     for i in range(0, len(iterable) - 1):
         if iterable[i] <> iterable[i + 1]:
             result.append(iterable[i])
-    result.append(iterable[-1])
+    if len(iterable) > 0:
+        result.append(iterable[-1])
     return result
     
 test.assert_equals(unique_in_order('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
